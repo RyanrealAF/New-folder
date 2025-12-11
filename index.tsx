@@ -9,6 +9,8 @@ import SeussToCypher from './pages/SeussToCypher';
 import Music from './pages/Music';
 import SourceCode from './pages/SourceCode';
 import Doctrine from './pages/Doctrine';
+import Book2 from './pages/Book2';
+import Book3 from './pages/Book3';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="breadcrumb-web" element={<BreadcrumbWeb />} />
           <Route path="seuss-to-cypher" element={<SeussToCypher />} />
           <Route path="music" element={<Music />} />
+          <Route path="book2" element={<Book2 />} />
+          <Route path="book3" element={<Book3 />} />
           <Route path="source-code" element={<SourceCode />} />
           <Route path="*" element={<div className="p-20 text-center text-secondary font-mono">404: Path Not Found</div>} />
         </Route>
