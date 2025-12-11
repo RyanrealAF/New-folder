@@ -18,3 +18,26 @@ View your app in AI Studio: https://ai.studio/apps/drive/1Yp_jxMP-xOnKNjdxGeFG6o
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## One-click Docker (GHCR)
+
+- The repository builds and publishes a Docker image to GitHub Container Registry (GHCR) via GitHub Actions.
+- Image name: `ghcr.io/<owner>/<repo>:latest` (replace `<owner>/<repo>` with your GitHub owner and repository name).
+
+Badge (replace owner/repo):
+
+[![GHCR Image](https://img.shields.io/badge/ghcr-available-brightgreen)](https://ghcr.io/<owner>/<repo>)
+
+Pull and run:
+
+```bash
+# pull the image
+docker pull ghcr.io/<owner>/<repo>:latest
+
+# run locally (maps container 80 -> host 8080)
+docker run --rm -p 8080:80 ghcr.io/<owner>/<repo>:latest
+```
+
+Notes:
+- Add `GEMINI_API_KEY` as a repository secret (Settings → Secrets) so the GitHub Actions workflow can pass it as a build-arg.
+- After pushing to `main`, the workflow builds and pushes the image to GHCR.
