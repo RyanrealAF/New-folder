@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Landing from './pages/Landing';
@@ -35,7 +35,7 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Landing />} />
@@ -48,7 +48,7 @@ const App = () => {
           <Route path="*" element={<div className="p-20 text-center text-secondary font-mono">404: Path Not Found</div>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

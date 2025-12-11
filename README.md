@@ -10,14 +10,23 @@ View your app in AI Studio: https://ai.studio/apps/drive/1Yp_jxMP-xOnKNjdxGeFG6o
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deploy to GitHub Pages
+
+Automatically deploy to `https://yourusername.github.io/your-repo/` by pushing to the `main` branch.
+
+**Setup (one time):**
+1. Enable GitHub Pages in your repo settings (Settings → Pages → Deploy from a branch → `gh-pages`).
+2. Push your code to `main` — the workflow auto-builds and deploys.
+3. Your app is live at `https://yourusername.github.io/your-repo/`.
+
+**Note:** URLs use hash routing (`/#/page` instead of `/page`). This is required for static hosting without server-side rewrites.
 
 ## One-click Docker (GHCR)
 
